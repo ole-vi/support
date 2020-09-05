@@ -25,7 +25,7 @@ REPO_LIST=(alpine nginx nginx-tags webssh webssh-tags novnc novnc-tags turtleblo
 for i in ${REPO_LIST[@]}
 do
   # get tags for repo
-  IMAGE_TAGS=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/treehouses/${i}/tags/?page_size=9 | jq -r '.results|.[]|.name')
+  IMAGE_TAGS=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/treehouses/${i}/tags/?page_size=6 | jq -r '.results|.[]|.name')
 
   # build a list of images from tags
   for j in ${IMAGE_TAGS}
