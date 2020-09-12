@@ -13,13 +13,13 @@ do
   IMAGE_TAGS=$(curl -s https://hub.docker.com/v2/repositories/treehouses/${i}/tags/?page_size=6 | jq -r '.results|.[]|.name')
 
   LATEST_UPDATE_TIME=$(curl -s https://hub.docker.com/v2/repositories/treehouses/${i}/tags/latest | jq -r '.last_updated')
+  FULL_IMAGE_LIST="${FULL_IMAGE_LIST} $LATEST_UPDATE_TIME"
   # build a list of images from tags
   for j in ${IMAGE_TAGS}
   do
     # add each tag to list
     FULL_IMAGE_LIST="${FULL_IMAGE_LIST} treehouses/${i}:${j}"
   done
-  FULL_IMAGE_LIST="${FULL_IMAGE_LIST} $LATEST_UPDATE_TIME"
   FULL_IMAGE_LIST="${FULL_IMAGE_LIST} --------------------------------------"
 done
 
