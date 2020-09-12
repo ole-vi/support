@@ -1,6 +1,4 @@
 ### Before running the script
-- set up environment variable `export UNAME=<docker username>`
-- set up environment variable `export UPASS=<docker apikey/password>`
 - install [jq](https://stedolan.github.io/jq/download/) package
 
 ### How to run
