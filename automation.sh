@@ -3,6 +3,7 @@
 echo "Finding changes since last time..."
 if [[ ! -f ./new ]]; then
   ./monitor_dockerhub.sh > new
+  cat ./new
   echo "No old history available"
   exit 0
 fi
