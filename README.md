@@ -4,8 +4,7 @@
 ### How to run
 
 ```
-./monitor_dockerhub.sh > <date>.diff
-
-#after serveral days...
-diff 20200904.diff 20200831.diff | grep "<"
+./automation.sh
+./automation_source.sh
+#It will generate diff file
 ```
