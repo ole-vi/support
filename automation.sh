@@ -10,7 +10,11 @@ fi
 
 mv new old
 ./monitor_dockerhub.sh > new
-diff new old | grep "<" > log.diff
+diff new old | grep "<" > temp
+echo "\`\`\`" > log.diff
+cat temp >> log.diff
+rm temp
+echo "\`\`\`" >> log.diff
 
 if [[ ! -s ./log.diff ]]; then
   echo "No changes since last time"
