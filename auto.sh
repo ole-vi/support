@@ -1,3 +1,4 @@
+export gitter_channel="https://api.gitter.im/v1/rooms/5924b873d73408ce4f61c762/chatMessages"
 DIR="/root/observe"
 cd $DIR
 
