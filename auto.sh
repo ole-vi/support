@@ -1,4 +1,4 @@
-DIR="/home/pi/fky/support/"
+DIR=`pwd`
 cd $DIR
 
 ./automation.sh
