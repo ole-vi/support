@@ -10,11 +10,7 @@ fi
 
 mv new_source old_source
 ./check_sources.sh > new_source
-diff new_source old_source | grep "<" > temp
-echo "\`\`\`" > log_source.diff
-cat temp >> log_source.diff
-rm temp
-echo "\`\`\`" >> log_source.diff
+diff new_source old_source | grep "<" > log_source.diff
 
 if [[ ! -s ./log_source.diff ]]; then
   echo "No changes since last time"
