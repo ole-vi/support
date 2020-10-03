@@ -1,8 +1,8 @@
-#! /bin/bash
+DIR="/home/pi/fky/support/"
+cd $DIR
 
-DIR="/home/pi/support/"
-
-$DIR/automation.sh
-$DIR/automation_source.sh
-treehouses feedback Docker_hub:$(<$DIR/log.diff)
-treehouses feedback Source:$(<$DIR/log_source.diff)
+./automation.sh
+./automation_source.sh
+sync;sync;sync
+treehouses feedback Docker_hub:$(<log.diff)
+treehouses feedback Source:$(<log_source.diff)
