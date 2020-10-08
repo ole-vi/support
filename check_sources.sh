@@ -13,16 +13,6 @@ OUTPUT="$OUTPUT alpine_amd64~last_updated:$alpine_last_updated $alpine_amd64_inf
 OUTPUT="$OUTPUT alpine_arm64~last_updated:$alpine_last_updated $alpine_arm64_info"
 OUTPUT="$OUTPUT alpine_arm~last_updated:$alpine_arm_info"
 
-#https://hub.docker.com/v2/repositories/amd64/node/tags/alpine3.12
-node_amd64=$(curl -s https://hub.docker.com/v2/repositories/amd64/node/tags/alpine3.12 | jq -r '{time: .last_updated, sha: .images | .[0].digest} | .[]')
-node_arm64=$(curl -s https://hub.docker.com/v2/repositories/balenalib/raspberrypi4-64-node/tags/latest | jq -r '{time: .last_updated, sha: .images | .[0].digest} | .[]')
-node_arm=$(curl -s https://hub.docker.com/v2/repositories/balenalib/raspberry-pi-alpine-node/tags/latest | jq -r '{time: .last_updated, sha: .images | .[0].digest} | .[]')
-
-OUTPUT="$OUTPUT ------------------------------node_source------------------------------"
-OUTPUT="$OUTPUT node_amd64~last_updated:$node_amd64"
-OUTPUT="$OUTPUT node_arm64~last_updated:$node_arm64"
-OUTPUT="$OUTPUT node_arm~last_updated:$node_arm -----------------------------------------------------------------------"
-
 for i in ${OUTPUT}
 do
   echo ${i}
