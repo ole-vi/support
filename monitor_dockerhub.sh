@@ -4,7 +4,7 @@ set -e
 
 # get list of repos for that user account
 #REPO_LIST=$(curl -s -H "Authorization: JWT ${TOKEN}" https://hub.docker.com/v2/repositories/${UNAME}/?page_size=10000 | jq -r '.results|.[]|.name')
-REPO_LIST=(alpine nginx nginx-tags webssh webssh-tags novnc novnc-tags turtleblocksjs turtleblocksjs-tags musicblocks musicblocks-tags sysmon sysmon-tags node)
+REPO_LIST=(alpine nginx nginx-tags webssh webssh-tags novnc novnc-tags turtleblocksjs turtleblocksjs-tags musicblocks musicblocks-tags sysmon sysmon-tags node node-tags)
 
 # build a list of all images & tags
 for i in "${REPO_LIST[@]}"
